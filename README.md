@@ -3,9 +3,19 @@
 
 
 ```
+├── convex_methods
+│   ├── cvx_demo.py
+│   ├── lasso_regression.py
+│   ├── regularized_logistic_loss.py
+│   ├── setup.sh
+│   ├── snapvx
+│   │   └── snap_vx.py
+│   └── support_vector.py
 ├── docker
 │   ├── images_2021
-│   │   └── R
+│   │   ├── R
+│   │   │   └── Dockerfile
+│   │   └── Ubuntu
 │   │       └── Dockerfile
 │   ├── install.sh
 │   └── notes.md
@@ -56,13 +66,21 @@
 ├── hpc_cpp
 │   ├── intel_mkl.cpp
 │   └── setup.md
+├── LICENSE
 ├── LICENSE.md
 ├── ml_demos
 │   ├── bert_customization.py
 │   ├── imputation.py
+│   ├── k-svd
+│   │   ├── KSVD-OMP-v2.pdf
+│   │   └── ne215_implementation
+│   │       ├── image-noise-reduction
+│   │       │   └── Makefile
+│   │       └── k-svd.py
 │   ├── mlflow_demo.py
 │   ├── mlflow_tracking__demo.py
 │   ├── pandas_sqldf.ipynb
+│   ├── scs_ADAM_solver.py
 │   ├── spark_demos.ipynb
 │   ├── TensorflowTesting.md
 │   ├── test_jupyter_integrations.ipynb
@@ -70,6 +88,8 @@
 │   ├── tf_demo.py
 │   ├── torch_demo.py
 │   └── wurlitzer_demo.py
+├── python_demos
+│   └── rich_demo.py
 ├── R
 │   ├── ConvertEpochToDate.R
 │   ├── CRANTaskView-PakgageDependencies.Rmd
@@ -101,6 +121,7 @@
     ├── cpp_development_toolchain.sh
     ├── cuda_notes.md
     ├── jetbrains.sh
+    ├── jupyter.sh
     ├── postgres.sh
     ├── pydev.md
     ├── ubuntu_conda_setup.sh
@@ -109,4 +130,3 @@
     ├── ubuntu_spark_dev_setup.sh
     └── ubuntu_user_mysql_setup.md
 ```
-
