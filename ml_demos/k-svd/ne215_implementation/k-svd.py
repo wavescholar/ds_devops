@@ -20,7 +20,3 @@ os.chdir('image-noise-reduction')
 
 #See makefile for steps
 os.system('make result.txt')
-
-
-
-os.system('rm -rf image-noise-reduction')

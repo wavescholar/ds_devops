@@ -36,6 +36,19 @@ echo  "
 source ~/dev-srcts/mega.srcts
 "  >> ~/.bashrc
 
+#Remove These first
+  # HISTSIZE=1000
+  # HISTFILESIZE=2000
+echo  "
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
+# Force prompt to write history after every command.
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+"  >> ~/.bashrc
+
+
 source    ~/.bashrc
 sudo apt-get install -y vim
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
