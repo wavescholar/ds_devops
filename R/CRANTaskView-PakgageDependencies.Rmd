@@ -1,0 +1,113 @@
+---
+title: "A View into CRAN TaskView"
+author: "Bruce Campbell"
+date: "4/8/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidygraph)
+library(ggraph)
+library(tools)
+#install.packages('ggraph')
+#install.packages('ctv')
+#install.packages('cranlogs')
+library(ggraph)
+library(ctv)
+library(cranlogs)
+library(ggthemes)
+```
+
+## A view into package connectivity for Spatial modeling in R 
+
+The ctv package gives us access to the Cran Task View repository. The package provides infrastructure for task views to CRAN-style repositories: Querying task views and installing the associated packages (client-side tools), generating HTML pages and storing task view information in the repository.
+
+Let's load up the data for the tidyverse and visualize it.  Then we'll look at the Machine Learnine,Spatial, and SpatioTemporal Task Views. 
+
+```{r,echo=FALSE}
+r = getOption("repos")
+r["CRAN"] = "http://cran.us.r-project.org"
+options(repos = r)
+
+all_cran_packages <- tools::CRAN_package_db()[,c("Package", "Imports")] 
+tidied_cran_imports <- as_tibble(all_cran_packages) %>% 
+  separate_rows(Imports, sep = ",") %>% 
+  mutate(Imports = str_replace(Imports,"\\s*\\([^\\)]+\\)","")) %>%
+  mutate(Imports = str_trim(Imports, side = "both"))
+
+tidyverse_tbl <- tidied_cran_imports %>% 
+  filter(Package %in% tidyverse_packages()) %>%
+  filter(Imports %in% tidyverse_packages()) %>%
+  as_tbl_graph() 
+
+plot_task_table<-function(task_table, titleText)
+{
+  p<- ggraph(task_table, layout = 'nicely') + 
+    geom_edge_link(colour = "grey50") + 
+    geom_node_text(aes(label = name),  size = 6) 
+  
+  p<-p + theme_solarized() + scale_colour_solarized("blue")
+  
+  p <- p +  theme(
+      plot.background = element_blank()
+     ,panel.grid.major = element_blank()
+     ,panel.grid.minor = element_blank()
+     ,panel.border = element_blank()
+    ) 
+  p <- p+ theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank()) + 
+      theme(axis.title.y=element_blank(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank())
+  p<- p + ggtitle(titleText)
+  return(p)
+}
+
+plot_task_table(tidyverse_tbl, "tidyverse")
+```
+
+```{r,echo=FALSE}
+
+ml_packages <- ctv:::.get_pkgs_from_ctv_or_repos(views = "MachineLearning") %>% 
+  unlist(use.names = FALSE)
+
+ml_tbl <- tidied_cran_imports %>%
+  filter(Package %in% ml_packages) %>%
+  filter(Imports %in% ml_packages) %>%
+  as_tbl_graph()
+
+plot_task_table(ml_tbl, "machine learning")
+```
+
+```{r,echo=FALSE,fig.width=8,fig.height=10}
+sptemp_packages <- ctv:::.get_pkgs_from_ctv_or_repos(views = "Spatial") %>% 
+  unlist(use.names = FALSE)
+
+sptem_tbl <- tidied_cran_imports %>%
+  filter(Package %in% sptemp_packages) %>%
+  filter(Imports %in% sptemp_packages) %>%
+  as_tbl_graph()
+
+
+plot_task_table(sptem_tbl,"spatial")
+```
+
+
+```{r,echo=FALSE}
+sptemp_packages <- ctv:::.get_pkgs_from_ctv_or_repos(views = "SpatioTemporal") %>% 
+  unlist(use.names = FALSE)
+
+sptem_tbl <- tidied_cran_imports %>%
+  filter(Package %in% sptemp_packages) %>%
+  filter(Imports %in% sptemp_packages) %>%
+  as_tbl_graph()
+
+
+plot_task_table(sptem_tbl,"spatiotemporal")
+```
+
