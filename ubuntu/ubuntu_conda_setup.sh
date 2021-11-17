@@ -4,6 +4,9 @@ sudo apt update  --fix-missing && sudo apt upgrade -y
 sudo apt-get install -f
 
 export CONDA_ENV=snowflakes
+conda info --envs
+conda info --envs conda info -e
+conda env remove -n $CONDA_ENV
 
 sudo apt-get update
 
@@ -44,9 +47,8 @@ pip install lightgbm catboost category_encoders
 pip install --ignore-installed great-expectations
 pip install 'ray[default]' xgboost_ray
 
-
-
-
+sudo apt install -y graphviz
+pip install pydeps
 
 
 #wurlitzer boto3 ipywidgets
