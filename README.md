@@ -1,6 +1,7 @@
 
 # ds-devops
 
+Work in progrss, howtos,  and spikes 
 
 ```
 ├── convex_methods
