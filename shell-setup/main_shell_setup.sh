@@ -24,6 +24,11 @@ gpg --armor --export yourkeyid # from the first line of the list command - don't
 
 git config --global user.signingkey yourkeyid
 
+git log --show-signature
+
+git config --global user.email $GITHUB_EMAIL
+git config --global user.name $GITHUB_USER
+
 # Clone this way to enable paswordless Git
 git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/$GITHUB_USER/ds_devops.git
 
@@ -47,7 +52,6 @@ export HISTFILE=~/.bash_eternal_history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 "  >> ~/.bashrc
 
-
 source    ~/.bashrc
 sudo apt-get install -y vim
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -59,10 +63,6 @@ gsettings set org.gnome.desktop.background primary-color 'rgb(0, 0, 0)'
 sudo apt-get install -y curl
 sudo apt-get install -y ncal
 sudo apt install -y screenfetch
-
-git config --global user.email $GITHUB_EMAIL
-git config --global user.name $GITHUB_USER
-
 
 mkdir ~/opt
 
@@ -81,6 +81,9 @@ alias top='btop'
 "  >> ~/.bashrc
 
 cd ~
+
+sudo apt install -y awscli
+aws configure
 
 sudo apt-get -y install dstat
 #dstat --aio --cpu --cpu-adv --cpu-use --cpu24 --disk --disk24 --disk24-old --epoch --fs --int --int24 --io --ipc --load --lock --mem --mem-adv --net --page --page24 --proc --raw --socket --swap --swap-old --sys --tcp --time --udp --unix --vm --vm-adv --zones
