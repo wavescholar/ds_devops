@@ -87,10 +87,7 @@ alias top='btop'
 cd ~
 
 sudo apt install -y awscli
-export AWS_REGION=us-east-2
-export AWS_ACCESS_KEY=AKIAXM7VO5B4J6E6LP7Z
-export AWS_SECRET=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
-export AWS_OUTPUT=json
+
 
 cd ~
 mkdir ~/.aws/
