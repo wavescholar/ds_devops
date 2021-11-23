@@ -3,6 +3,8 @@
 
 Work in progrss, howtos,  and spikes 
 
+There is a lot of date code here - we try to sweep into the dust_bin folder regularly...
+
 ```
 ├── convex_methods
 │   ├── cvx_demo.py
