@@ -17,6 +17,8 @@
 # To sign use -S  as here : git commit -S -m your commit message
 # For tags :  git tag -s mytag
 
+export SERVER_NAME=mega # kilo
+
 git config --global commit.gpgsign true
 gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
@@ -35,6 +37,8 @@ git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/$GITHUB_USER/ds_devops.gi
 mkdir ~/work
 cp -r ds_devops/ ~/work/
 cp -r dev-srcts/ ~
+
+source ~/dev-srcts/$SERVER_NAME.srcts
 
 echo  "
 source ~/dev-srcts/mega.srcts
@@ -83,7 +87,21 @@ alias top='btop'
 cd ~
 
 sudo apt install -y awscli
-aws configure
+export AWS_REGION=us-east-2
+export AWS_ACCESS_KEY=AKIAXM7VO5B4J6E6LP7Z
+export AWS_SECRET=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
+export AWS_OUTPUT=json
+
+cd ~
+mkdir ~/.aws/
+
+echo  "
+[default]
+aws_access_key_id=$AWS_ACCESS_KEY
+aws_secret_access_key=$AWS_SECRET
+region=$AWS_REGION
+output=$AWS_OUTPUT
+"  >> ~/.aws/credentials
 
 sudo apt-get -y install dstat
 #dstat --aio --cpu --cpu-adv --cpu-use --cpu24 --disk --disk24 --disk24-old --epoch --fs --int --int24 --io --ipc --load --lock --mem --mem-adv --net --page --page24 --proc --raw --socket --swap --swap-old --sys --tcp --time --udp --unix --vm --vm-adv --zones
