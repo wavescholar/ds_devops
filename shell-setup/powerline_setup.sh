@@ -3,29 +3,39 @@
 sudo apt install -y powerline
 sudo apt install -y powerline-gitstatus
 
-POWERLINE_DIR='./.local/lib/python3.8/site-packages/powerline'
-
-POWERLINE_CONFIG_DIR=$POWERLINE_DIR/config_files
-echo $POWERLINE_CONFIG_DIR
-ls $POWERLINE_CONFIG_DIR
-
-cd ~
-mkdir .config
-mkdir ~/.config/powerline
-cp -R  $POWERLINE_CONFIG_DIR/*  ~/.config/powerline
-
-
-echo  '
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
+# Powerline configuration
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
-if [ -f $POWERLINE_DIR/bindings/bash/powerline.sh ]; then
-    source $POWERLINE_DIR/bindings/bash/powerline.sh
-fi
-export POWERLINE_COMMAND=powerline
-export POWERLINE_CONFIG_COMMAND=powerline-config
-'  >> ~/.bashrc
+# bbcrevisit Save for now - remove later
+#
+# POWERLINE_DIR='./.local/lib/python3.8/site-packages/powerline'
+#
+# POWERLINE_CONFIG_DIR=$POWERLINE_DIR/config_files
+# echo $POWERLINE_CONFIG_DIR
+# ls $POWERLINE_CONFIG_DIR
+#
+# cd ~
+# mkdir .config
+# mkdir ~/.config/powerline
+# cp -R  $POWERLINE_CONFIG_DIR/*  ~/.config/powerline
+#
+#
+# echo  '
+# if [ -d "$HOME/.local/bin" ]; then
+#     PATH="$HOME/.local/bin:$PATH"
+# fi
+#
+# if [ -f $POWERLINE_DIR/bindings/bash/powerline.sh ]; then
+#     source $POWERLINE_DIR/bindings/bash/powerline.sh
+# fi
+# export POWERLINE_COMMAND=powerline
+# export POWERLINE_CONFIG_COMMAND=powerline-config
+# '  >> ~/.bashrc
 
 
 # The Gitstatus segment uses a couple of custom highlight groups.

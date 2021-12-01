@@ -34,9 +34,9 @@ git config --global user.name $GITHUB_USER
 # Clone this way to enable paswordless Git
 git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/$GITHUB_USER/ds_devops.git
 
+git clone https://$GITHUB_USER:$GITHUB_PASS@https://github.com/spintellx-inc/HistoMapr-BackEnd.git
+
 mkdir ~/work
-cp -r ds_devops/ ~/work/
-cp -r dev-srcts/ ~
 
 source ~/dev-srcts/$SERVER_NAME.srcts
 
@@ -78,21 +78,13 @@ alias cat='batcat'
 "  >> ~/.bashrc
 
 sudo snap install -y btop
-cd ../
 
 echo  "
 alias top='btop'
 "  >> ~/.bashrc
 
-cd ~
 
 sudo apt install -y awscli
-export AWS_REGION=us-east-2
-export AWS_ACCESS_KEY=AKIAXM7VO5B4J6E6LP7Z
-export AWS_SECRET=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
-export AWS_OUTPUT=json
-
-cd ~
 mkdir ~/.aws/
 
 echo  "
