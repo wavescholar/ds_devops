@@ -85,6 +85,7 @@ alias top='btop'
 
 
 sudo apt install -y awscli
+
 mkdir ~/.aws/
 
 echo  "
