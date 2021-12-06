@@ -24,7 +24,7 @@ gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
 gpg --armor --export yourkeyid # from the first line of the list command - don't use the rsa part at the beginning
 
-git config --global user.signingkey yourkeyid
+git config --global user.signingkey
 
 git log --show-signature
 
@@ -34,7 +34,7 @@ git config --global user.name $GITHUB_USER
 # Clone this way to enable paswordless Git
 git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/$GITHUB_USER/ds_devops.git
 
-git clone https://$GITHUB_USER:$GITHUB_PASS@https://github.com/spintellx-inc/HistoMapr-BackEnd.git
+git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/spintellx-inc/HistoMapr-BackEnd.git
 
 mkdir ~/work
 
