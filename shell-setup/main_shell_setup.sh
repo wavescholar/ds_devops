@@ -34,8 +34,6 @@ git config --global user.name $GITHUB_USER
 # Clone this way to enable paswordless Git
 git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/$GITHUB_USER/ds_devops.git
 
-git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/spintellx-inc/HistoMapr-BackEnd.git
-
 mkdir ~/work
 
 source ~/dev-srcts/$SERVER_NAME.srcts
