@@ -3,7 +3,7 @@
 sudo apt install -y powerline
 sudo apt install -y powerline-gitstatus
 
-# Powerline configuration
+# Powerline configuration - add this to .bashrc
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
