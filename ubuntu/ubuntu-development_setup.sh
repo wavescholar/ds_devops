@@ -34,17 +34,18 @@ sudo -i -u postgres
 #psql #opens cli
 
 #LAMP
+ServerName=burakviz
 sudo apt install -y apache2
-sudo apt install -y php7.2 libapache2-mod-php7.2 php-mysql
-sudo apt install -y php-curl php-json php-cgi
+#sudo apt install -y php7.2 libapache2-mod-php7.2 php-mysql
+#sudo apt install -y php-curl php-json php-cgi
 rm $ServerName.conf
 echo  "
-<Directory /var/www/html/wavescholar.com/public_html>
+<Directory /var/www/html/burakviz.com/public_html>
         Require all granted
 </Directory>
 <VirtualHost *:80>
-        ServerName example.com
-        ServerAlias www.wavescholar.com
+        ServerName burakviz.com
+        ServerAlias burakviz.com
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html/$ServerName/public_html
 

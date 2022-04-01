@@ -24,7 +24,7 @@ gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
 gpg --armor --export yourkeyid # from the first line of the list command - don't use the rsa part at the beginning
 
-git config --global user.signingkey
+git config --global user.signingkey yourkeyid
 
 git log --show-signature
 
@@ -93,6 +93,11 @@ aws_secret_access_key=$AWS_SECRET
 region=$AWS_REGION
 output=$AWS_OUTPUT
 "  >> ~/.aws/credentials
+
+#vscode ai docstring generator
+
+sudo docker run --memory 4g --memory-swap 2g -it -d -p 5001:5001 graykode/ai-docstring
+
 
 sudo apt-get -y install dstat
 #dstat --aio --cpu --cpu-adv --cpu-use --cpu24 --disk --disk24 --disk24-old --epoch --fs --int --int24 --io --ipc --load --lock --mem --mem-adv --net --page --page24 --proc --raw --socket --swap --swap-old --sys --tcp --time --udp --unix --vm --vm-adv --zones
