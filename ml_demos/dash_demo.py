@@ -22,11 +22,11 @@ app.index_string = '''
   <script type="text/javascript">
    document.addEventListener("adobe_dc_view_sdk.ready", function()
    {
-      var adobeDCView = new AdobeDC.View({clientId: "f27ea3d207e74d7ab282c571693b867b", divId: "adobe-dc-view"});
+      var adobeDCView = new AdobeDC.View({clientId: "", divId: "adobe-dc-view"});
       adobeDCView.previewFile(
      {
-         content:  {location: {url: "/home/wavescholar/work/ds_devops/ml_demos/doc.pdf"}},
-         metaData: {fileName: "/home/wavescholar/work/ds_devops/ml_demos/doc.pdf"}
+         content:  {location: {url: "doc.pdf"}},
+         metaData: {fileName: "doc.pdf"}
      });
    });
   </script>
