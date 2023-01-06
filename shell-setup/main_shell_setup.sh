@@ -19,6 +19,10 @@
 
 export SERVER_NAME=mega # kilo
 
+#These are set in a secrets file
+git config --global user.email $GITHUB_EMAIL
+git config --global user.name $GITHUB_USER
+
 git config --global commit.gpgsign true
 gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
@@ -26,11 +30,15 @@ gpg --list-secret-keys --keyid-format=long
 gpg --armor --export $KEY_ID # from the first line of the list command - don't use the rsa part at the beginning
 
 git config --global user.signingkey $KEY_ID
+#See https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html if you have any issues 
+#Add below to .bashrc if you run into issues
+
+echo  "
+export GPG_TTY=$(tty)
+"  >> ~/.bashrc
 
 git log --show-signature
 
-git config --global user.email $GITHUB_EMAIL
-git config --global user.name $GITHUB_USER
 
 # Clone this way to enable paswordless Git
 git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/$GITHUB_USER/ds_devops.git
