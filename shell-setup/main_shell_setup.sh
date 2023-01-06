@@ -22,9 +22,10 @@ export SERVER_NAME=mega # kilo
 git config --global commit.gpgsign true
 gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
-gpg --armor --export yourkeyid # from the first line of the list command - don't use the rsa part at the beginning
+# sec   rsa3072/96D71CF2DFEBD9B3 2023-01-06 [SC] ------< choose KEY_ID=96D71CF2DFEBD9B3
+gpg --armor --export $KEY_ID # from the first line of the list command - don't use the rsa part at the beginning
 
-git config --global user.signingkey yourkeyid
+git config --global user.signingkey $KEY_ID
 
 git log --show-signature
 
