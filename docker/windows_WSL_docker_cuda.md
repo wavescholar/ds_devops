@@ -19,3 +19,21 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
 sudo apt-get update
 sudo apt-get install -y Nvidia-container-toolkit
 ```
+
+### Configure NVIDIA x Docker 
+
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker
+
+```
+sudo nvidia-ctk runtime configure --runtime=docker
+```
+Restart docker via the Windows docker engine
+
+### Test 
+
+```
+sudo docker run --GPUs all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -GPU -benchmark
+docker run -it --rm --GPUs all ubuntu Nvidia-smi
+#Test
+sudo docker run --rm --gpus=all --GPUs all ubuntu nvidia-smi
+```
