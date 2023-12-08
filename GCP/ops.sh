@@ -5,7 +5,8 @@ gcloud auth login
 #gcloud auth login --no-launch-browser
 
 gcloud config set project PROJECT_ID
- 
+# gcloud config set project totemic-tower-407319
+
 gcloud compute config-ssh
 
 
