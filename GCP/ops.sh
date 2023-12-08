@@ -1,5 +1,11 @@
 #First time init
 gcloud init
+
+gcloud auth login
+#gcloud auth login --no-launch-browser
+
+gcloud config set project PROJECT_ID
+ 
 gcloud compute config-ssh
 
 
