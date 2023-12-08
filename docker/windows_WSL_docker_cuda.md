@@ -54,6 +54,9 @@ docker scout covers ubuntu:jammy-20231128
 
 #  View base image update recommendations
 docker scout recommendations ubuntu:jammy-20231128
+
+sudo docker container ls --all
+
 ```
 
 
