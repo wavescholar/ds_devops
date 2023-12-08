@@ -37,3 +37,38 @@ docker run -it --rm --GPUs all ubuntu Nvidia-smi
 #Test
 sudo docker run --rm --gpus=all --GPUs all ubuntu nvidia-smi
 ```
+
+### Make a container 
+
+
+```
+sudo docker image ls
+
+docker pull ubuntu:jammy-20231128
+
+#View a summary of image vulnerabilities and recommendations
+docker scout Quickview ubuntu:jammy-20231128
+
+# View vulnerabilities
+docker scout covers ubuntu:jammy-20231128
+
+#  View base image update recommendations
+docker scout recommendations ubuntu:jammy-20231128
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
