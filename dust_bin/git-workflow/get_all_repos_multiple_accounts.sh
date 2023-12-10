@@ -1,5 +1,5 @@
 
-ACCOUNT_LIST=('wavescholar' 'brucebcampbell' 'ncsu-statistics')
+ACCOUNT_LIST=('wavescholar' 'OSU-MATH' 'NCSU-STATS')
 
 for account_name in "${ACCOUNT_LIST[@]}"
 do
