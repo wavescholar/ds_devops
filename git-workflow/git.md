@@ -1,4 +1,7 @@
 
+### Basic commands
+
+```
 git branch <feature>; 
  
 git commit -m "<>"; ... ; 
@@ -12,10 +15,9 @@ git pull; 
 git merge <feature>; 
  
 git push
+```
+### Detached head
 
-===========================================
-
-Detached head
 That means you are either in the middle of a rebase or stash pop or that you have checked out a particular commit id
 you can checkout a specific commit via git checkout <commit-id>
 This forces the repo to make the working copy match exactly that commit
@@ -32,7 +34,8 @@ If you checked out a specific commit, then you can just say "git checkout -b <na
 And sets you to it, so that you are no longer in detached head
 As with a lot of git stuff, this probably seems baroque, but it makes some sense  once you understand how git works
 
-<-------------------------Install new Version of git
+## CentOS Install new Version of git
+
 yum -y install https://centos6.iuscommunity.org/ius-release.rpm
 rpm --import /etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY
  
@@ -46,4 +49,3 @@ yum update
 yum remove git
  
 yum --disablerepo=base,updates --enablerepo=rpmforge-extras install git2u-2.9.0-1.ius.centos6.x86_64
-<-----------------------------------------------------------------
