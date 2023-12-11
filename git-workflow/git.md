@@ -36,6 +36,7 @@ As with a lot of git stuff, this probably seems baroque, but it makes some sense
 
 ## CentOS Install new Version of git
 
+```
 yum -y install https://centos6.iuscommunity.org/ius-release.rpm
 rpm --import /etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY
  
@@ -49,3 +50,4 @@ yum update
 yum remove git
  
 yum --disablerepo=base,updates --enablerepo=rpmforge-extras install git2u-2.9.0-1.ius.centos6.x86_64
+```
