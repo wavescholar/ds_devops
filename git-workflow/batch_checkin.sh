@@ -18,11 +18,13 @@ do
     echo dir
     echo $dir
     
-    dir=${dir%*/}      # remove the trailing "/"
-    echo "${dir##*/}"    # print everything after the final "/"
+    # dir=${dir%*/}      # remove the trailing "/"
+    # echo "${dir##*/}"    # print everything after the final "/"
     cd $dir
+    echo '---------------'
+    echo pwd
     git add .
-    git commit -m $COMMIT_MESSAGE
+    git commit -m '$COMMIT_MESSAGE'
     git push
     cd ../
     
