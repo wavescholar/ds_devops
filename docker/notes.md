@@ -30,11 +30,11 @@ EOF
 ```
 ###Build
 ```
-docker build -t wavescholar/data-science-microservices .
+docker build -t wavescholar/wavescholar-r-microservice-image .
 ```
 #### Push to Microservices Docker Repository
 ```
-docker push wavescholar/data-science-microservices:tagname
+docker push wavescholar/wavescholar-r-microservice-image:tagname
 ```
 
 ### List and Display Commands

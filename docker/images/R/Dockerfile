@@ -1,4 +1,4 @@
-FROM r-base:4.0.3
+FROM r-base:latest
 
 RUN R --no-save -e "install.packages(c('log4r','foreach','doMC','sqldf','data.table','usethis','gridExtra','tictoc','devtools','base64enc'))"
 RUN R --no-save -e "install.packages(c('bayesplot','parallel','pscl','sandwich','lmtest','faraway','lattice','hexbin','httr', 'rversions','extrafont' ))"
