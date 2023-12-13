@@ -39,7 +39,6 @@ export GPG_TTY=$(tty)
 
 git log --show-signature
 
-
 # Clone this way to enable paswordless Git
 git clone https://$GITHUB_USER:$GITHUB_PASS@github.com/$GITHUB_USER/ds_devops.git
 
