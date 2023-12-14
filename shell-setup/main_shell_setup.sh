@@ -34,7 +34,8 @@ git config --global user.signingkey $KEY_ID
 #Add below to .bashrc if you run into issues
 
 echo  "
-export GPG_TTY=$(tty)
+  GPG_TTY=$(tty)
+  export GPG_TTY
 "  >> ~/.bashrc
 
 git log --show-signature
