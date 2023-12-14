@@ -9,7 +9,6 @@ gcloud config set project $PROJECT_ID
 
 gcloud compute config-ssh
 
-
 #List Installed Components
 gcloud components list
 
