@@ -10,6 +10,8 @@ gcloud config set project $PROJECT_ID
 gcloud auth application-default set-quota-project $PROJECT_ID
 
 gcloud config get-value project
+
+# run to get hosts set up in vscode
 gcloud compute config-ssh
 
 #List Installed Components
