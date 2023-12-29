@@ -1,3 +1,4 @@
+#Wurlitzer. Capture C-level stdout/stderr pipes in Python via os.dup2
 import ctypes
 
 libc = ctypes.CDLL(None)
