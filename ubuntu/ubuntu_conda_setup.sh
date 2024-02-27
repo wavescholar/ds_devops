@@ -18,7 +18,8 @@ sudo apt-get -y install autoconf
 sudo apt-get -y install tmux
 sudo apt-get -y install texlive-*
 
-export CONDA_BIN=Anaconda3-2021.05-Linux-x86_64.sh
+
+export CONDA_BIN=Anaconda3-2023.09-0-Linux-x86_64.sh
 wget https://repo.anaconda.com/archive/$CONDA_BIN
 bash $CONDA_BIN
 
