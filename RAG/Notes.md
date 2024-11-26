@@ -1,0 +1,75 @@
+A **RAG (Retrieval-Augmented Generation)** system is a machine learning architecture designed to enhance the generation of responses by integrating external knowledge retrieval. It combines retrieval and generation tasks to create more contextually accurate and knowledge-rich outputs. The main components of a RAG system are:
+
+---
+
+### 1. **Retriever**
+   - **Purpose:** To fetch relevant information from an external knowledge base or dataset.
+   - **Functionality:**
+     - Takes a query as input (e.g., a user's prompt).
+     - Searches a corpus of documents or embeddings to find the most relevant pieces of information.
+     - Common retrieval methods:
+       - Dense retrieval (e.g., using vector similarity with embeddings like BERT or FAISS).
+       - Sparse retrieval (e.g., TF-IDF or BM25).
+     - Outputs a set of retrieved documents or passages.
+
+---
+
+### 2. **Generator**
+   - **Purpose:** To generate a response based on both the query and the retrieved information.
+   - **Functionality:**
+     - Combines the query with the retrieved documents as context.
+     - Uses a generative model (e.g., GPT, BART, or T5) to produce the final output.
+     - The generative model integrates the retrieved knowledge to create contextually rich and accurate responses.
+
+---
+
+### 3. **Knowledge Base**
+   - **Purpose:** The repository of information that the retriever accesses.
+   - **Types:**
+     - Predefined document corpus (e.g., Wikipedia, internal company documents).
+     - Database or structured data.
+     - Embedding-based representations for fast and scalable search.
+
+---
+
+### 4. **Query Encoder**
+   - **Purpose:** To transform the input query into a representation suitable for retrieval.
+   - **Functionality:**
+     - Converts the query into an embedding or sparse vector.
+     - Ensures compatibility with the retrieval mechanism (e.g., dense retrieval requires embeddings, sparse retrieval may use term-frequency vectors).
+
+---
+
+### 5. **Document/Passage Encoder**
+   - **Purpose:** To prepare the documents or passages in the knowledge base for efficient retrieval.
+   - **Functionality:**
+     - Encodes each document into embeddings or sparse representations that align with the query encoding.
+
+---
+
+### 6. **Fusion Mechanism**
+   - **Purpose:** To integrate information from multiple retrieved sources before passing it to the generator.
+   - **Approaches:**
+     - Concatenation of retrieved passages.
+     - Weighted summarization or ranking of sources.
+     - Neural fusion models that learn how to combine retrieved information.
+
+---
+
+### 7. **Feedback/Ranking Mechanism** *(Optional)*
+   - **Purpose:** To improve the retriever's performance over time.
+   - **Functionality:**
+     - Reranks retrieved documents to prioritize the most relevant ones.
+     - Incorporates relevance signals based on user feedback or external evaluation metrics.
+
+---
+
+### 8. **Evaluation Metrics** *(Optional, for Training or Fine-tuning)*
+   - **Purpose:** To assess the system's performance during development.
+   - Common metrics:
+     - **Retriever evaluation:** Precision@k, Recall@k.
+     - **Generator evaluation:** BLEU, ROUGE, METEOR, or human evaluation for coherence and relevance.
+
+---
+
+In essence, a RAG system leverages the retriever to find relevant external data and the generator to synthesize this data into coherent, context-rich responses. This hybrid approach enables more accurate and informed outputs compared to standalone generative models.
