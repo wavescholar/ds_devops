@@ -1,6 +1,7 @@
 # MMR 
 
 Paper : The Use of MMR, Diversity-Based Reranking for Reordering Documents and Producing Summaries 
+
 Blog : https://medium.com/tech-that-works/maximal-marginal-relevance-to-rerank-results-in-unsupervised-keyphrase-extraction-22d95015c7c5
 
 ```
