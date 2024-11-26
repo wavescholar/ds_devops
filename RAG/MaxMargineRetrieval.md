@@ -1,7 +1,10 @@
-from sklearn.metrics.pairwise import cosine_similarity
+# MMR 
 
-#See Paper : The Use of MMR, Diversity-Based Reranking for Reordering Documents and Producing Summaries 
-#See Blog : https://medium.com/tech-that-works/maximal-marginal-relevance-to-rerank-results-in-unsupervised-keyphrase-extraction-22d95015c7c5
+Paper : The Use of MMR, Diversity-Based Reranking for Reordering Documents and Producing Summaries 
+Blog : https://medium.com/tech-that-works/maximal-marginal-relevance-to-rerank-results-in-unsupervised-keyphrase-extraction-22d95015c7c5
+
+```
+from sklearn.metrics.pairwise import cosine_similarity
 
 def maximal_marginal_relevance(sentence_vector, phrases, embedding_matrix, lambda_constant=0.5, threshold_terms=10):
     """
@@ -36,3 +39,4 @@ def maximal_marginal_relevance(sentence_vector, phrases, embedding_matrix, lambd
         r.remove(phrase_to_add)
         s.append((phrase_to_add, score))
     return (s, s[:threshold_terms])[threshold_terms > len(s)]
+```
