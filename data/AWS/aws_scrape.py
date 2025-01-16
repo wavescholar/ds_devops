@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import os
 
 # Base URL for AWS Documentation
-BASE_URL = "https://aws.amazon.com/documentation/"
+BASE_URL =  "https://aws.amazon.com/documentation-overview/" #"https://aws.amazon.com/documentation/"
 
 # Output Directory
 OUTPUT_DIR = "aws_docs"
@@ -29,7 +29,8 @@ def get_doc_links(base_url):
     # Find all documentation category links
     for a_tag in soup.find_all("a", href=True):
         href = a_tag['href']
-        if "/documentation/" in href:
+        print(href)
+        if "/documentation-overview/" in href:
             links.append(href)
 
     # Ensure URLs are absolute
@@ -80,3 +81,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    print("aws scrape complete")
