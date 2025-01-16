@@ -1,0 +1,54 @@
+{
+  "customers": [
+    {
+      "company_name": "Amazon.com, Inc.",
+      "ticker_symbol": "AMZN",
+      "description": "A global e-commerce and cloud computing leader, Amazon utilizes Salesforce to enhance its customer relationship management and streamline operations."
+    },
+    {
+      "company_name": "Walmart Inc.",
+      "ticker_symbol": "WMT",
+      "description": "As a leading retail corporation, Walmart employs Salesforce solutions to improve customer engagement and optimize supply chain processes."
+    },
+    {
+      "company_name": "American Express Company",
+      "ticker_symbol": "AXP",
+      "description": "A multinational financial services corporation, American Express uses Salesforce to manage customer relationships and deliver personalized services."
+    },
+    {
+      "company_name": "Toyota Motor Corporation",
+      "ticker_symbol": "TM",
+      "description": "A major automotive manufacturer, Toyota leverages Salesforce to enhance customer service and drive sales growth."
+    },
+    {
+      "company_name": "International Business Machines Corporation",
+      "ticker_symbol": "IBM",
+      "description": "A global technology company, IBM utilizes Salesforce to streamline its sales processes and improve client engagement."
+    },
+    {
+      "company_name": "T-Mobile US, Inc.",
+      "ticker_symbol": "TMUS",
+      "description": "A leading telecommunications company, T-Mobile employs Salesforce to manage customer interactions and support services."
+    },
+    {
+      "company_name": "Ford Motor Company",
+      "ticker_symbol": "F",
+      "description": "An American multinational automaker, Ford uses Salesforce to enhance dealer relationships and improve customer experiences."
+    },
+    {
+      "company_name": "PayPal Holdings, Inc.",
+      "ticker_symbol": "PYPL",
+      "description": "A global online payments system, PayPal leverages Salesforce to manage customer support and service operations."
+    },
+    {
+      "company_name": "Southwest Airlines Co.",
+      "ticker_symbol": "LUV",
+      "description": "A major American airline, Southwest Airlines utilizes Salesforce to improve customer service and streamline operations."
+    },
+    {
+      "company_name": "Unilever PLC",
+      "ticker_symbol": "UL",
+      "description": "A multinational consumer goods company, Unilever employs Salesforce to drive marketing efficiency and customer engagement."
+    }
+  ]
+}
