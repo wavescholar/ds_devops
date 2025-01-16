@@ -1,0 +1,98 @@
+{
+  "document_types": [
+    {
+      "name": "Form 10-K",
+      "description": "Annual Report providing a comprehensive overview of the company's financial performance.",
+      "frequency": "Yearly",
+      "deadline": {
+        "large_accelerated_filers": "60 days after fiscal year-end",
+        "accelerated_filers": "75 days after fiscal year-end",
+        "non_accelerated_filers": "90 days after fiscal year-end"
+      },
+      "contents": [
+        "Audited financial statements",
+        "Management discussion and analysis (MD&A)",
+        "Risk factors",
+        "Market data"
+      ]
+    },
+    {
+      "name": "Form 20-F",
+      "description": "Annual Report for foreign companies listed on U.S. exchanges.",
+      "frequency": "Yearly",
+      "deadline": "4 months after fiscal year-end",
+      "contents": [
+        "Financial statements (IFRS or U.S. GAAP)",
+        "Management analysis",
+        "Risk factors"
+      ]
+    },
+    {
+      "name": "Form 10-Q",
+      "description": "Quarterly Report summarizing financial performance.",
+      "frequency": "Quarterly",
+      "deadline": {
+        "large_accelerated_filers": "40 days after quarter-end",
+        "accelerated_filers": "40 days after quarter-end",
+        "non_accelerated_filers": "45 days after quarter-end"
+      },
+      "contents": [
+        "Unaudited financial statements",
+        "Management discussion and analysis (MD&A)"
+      ]
+    },
+    {
+      "name": "Form 8-K",
+      "description": "Current Report disclosing significant events.",
+      "frequency": "As Needed",
+      "deadline": "4 business days after the event",
+      "contents": [
+        "Material event descriptions",
+        "Supporting documents (if applicable)"
+      ]
+    },
+    {
+      "name": "Proxy Statement (Schedule 14A)",
+      "description": "Filed in connection with shareholder meetings.",
+      "frequency": "Yearly",
+      "deadline": "Before the annual shareholder meeting",
+      "contents": [
+        "Voting procedures",
+        "Executive compensation",
+        "Governance details"
+      ]
+    },
+    {
+      "name": "Form 4",
+      "description": "Reports insider trading activity.",
+      "frequency": "As Needed",
+      "deadline": "2 business days after the transaction",
+      "contents": [
+        "Details of securities traded",
+        "Ownership changes"
+      ]
+    },
+    {
+      "name": "Form S-1",
+      "description": "Registration statement for initial public offerings (IPO) or secondary offerings.",
+      "frequency": "As Needed",
+      "deadline": "N/A",
+      "contents": [
+        "Prospectus",
+        "Company business description",
+        "Risk factors",
+        "Financial statements"
+      ]
+    },
+    {
+      "name": "Form 6-K",
+      "description": "Report filed by foreign issuers with periodic updates.",
+      "frequency": "Quarterly or As Needed",
+      "deadline": "N/A",
+      "contents": [
+        "Interim financial updates",
+        "Material event descriptions"
+      ]
+    }
+  ]
+}
